@@ -13,7 +13,7 @@ class GridView: UIView {
         
     // MARK: - Private properties
 
-    private var spacingStackView: CGFloat = 0.0
+    private var spacingStackView: CGFloat = 15.0
     
     // MARK: - Internal inspectables
     
@@ -49,7 +49,7 @@ class GridView: UIView {
     
     fileprivate func createLine(numberOfColumns: Int, in stackView: UIStackView) {
         // Create stackView line
-        let horizontalStackView = UIStackView() // TODO: extract in one function to use for secondHorizontalStackView too
+        let horizontalStackView = UIStackView()
         horizontalStackView.axis = .horizontal
         horizontalStackView.alignment = .fill
         horizontalStackView.distribution = .fillEqually
@@ -58,11 +58,8 @@ class GridView: UIView {
         // Create stackViews columns
         for _ in 0 ..< numberOfColumns {
             let imageView = UIImageView()
-            let redValue = CGFloat(arc4random_uniform(255)) / 255.0; // TODO: Remove when true view added
-            let greenValue = CGFloat(arc4random_uniform(255)) / 255.0; // TODO: Remove when true view added
-            let blueValue = CGFloat(arc4random_uniform(255)) / 255.0; // TODO: Remove when true view added
-            let alphaValue: CGFloat = 1.0 // TODO: Remove when true view added
-            imageView.backgroundColor = UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: alphaValue)
+            imageView.layer.cornerRadius = 2
+            imageView.backgroundColor = .white
             horizontalStackView.addArrangedSubview(imageView)
         }
         
@@ -70,12 +67,15 @@ class GridView: UIView {
     }
     
     fileprivate func stackViewSetup() {
+        // Remove all subviews
+        subviews.forEach({ $0.removeFromSuperview() })
+
         // Initialization of vertical stackView which contains two lines of stackViews
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = spacingStackView
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-        stackView.spacing = spacingStackView
         
         // Create two lines of stackViews
         createLine(numberOfColumns: numberOfColumnsForFirstLine, in: stackView)
