@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ThirstySoftRegular.otf">
+            <string>ThirstySoftRegular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -41,12 +46,50 @@
                                     <constraint firstItem="IAp-Fr-8cN" firstAttribute="top" secondItem="MsV-um-GBz" secondAttribute="top" constant="15" id="qDl-Hm-sNx"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbT-SY-Pak">
+                                <rect key="frame" x="20" y="72" width="374" height="39"/>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jis-dC-EAJ" userLabel="Buttons Stack View">
+                                <rect key="frame" x="67" y="750" width="280" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXD-3g-D3m" userLabel="OneTwoButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="6nY-cx-70Y"/>
+                                            <constraint firstAttribute="width" constant="80" id="UOa-uo-DcF"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb1-gE-rzs" userLabel="TwoOneButton">
+                                        <rect key="frame" x="100" y="0.0" width="80" height="80"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="489-9t-ioX" userLabel="TwoTwoButton">
+                                        <rect key="frame" x="200" y="0.0" width="80" height="80"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Cb1-gE-rzs" firstAttribute="height" secondItem="VXD-3g-D3m" secondAttribute="height" id="3gf-bG-Dc3"/>
+                                    <constraint firstItem="489-9t-ioX" firstAttribute="width" secondItem="VXD-3g-D3m" secondAttribute="width" id="IFV-ps-l8S"/>
+                                    <constraint firstItem="489-9t-ioX" firstAttribute="height" secondItem="VXD-3g-D3m" secondAttribute="height" id="NqK-2W-lP7"/>
+                                    <constraint firstItem="Cb1-gE-rzs" firstAttribute="width" secondItem="VXD-3g-D3m" secondAttribute="width" id="dH5-ne-nm1"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705882352942" green="0.84313725490196079" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Jis-dC-EAJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Vb-0Q-0ia"/>
                             <constraint firstItem="MsV-um-GBz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="C16-jK-QaM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MsV-um-GBz" secondAttribute="trailing" constant="20" id="DaH-NJ-Dxf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KbT-SY-Pak" secondAttribute="trailing" constant="20" id="GdS-zm-KKa"/>
                             <constraint firstItem="MsV-um-GBz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WrS-Vi-6Zh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jis-dC-EAJ" secondAttribute="bottom" constant="32" id="bAl-wR-CHH"/>
+                            <constraint firstItem="KbT-SY-Pak" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="bQd-2y-wn4"/>
+                            <constraint firstItem="KbT-SY-Pak" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="emu-m3-Qku"/>
                             <constraint firstItem="MsV-um-GBz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lGt-9c-y0s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
