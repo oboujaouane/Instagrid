@@ -68,11 +68,27 @@
 			isa = PBXGroup;
 			children = (
 				2415B4ED24E27015001F5EBD /* Supporting Files */,
-				2456368D24E1D439006338E5 /* ViewController.swift */,
+				24B3562224E2ED6B00579D28 /* View */,
+				24B3562324E2ED7400579D28 /* Controller */,
+			);
+			path = Instagrid;
+			sourceTree = "<group>";
+		};
+		24B3562224E2ED6B00579D28 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				2456368F24E1D439006338E5 /* Main.storyboard */,
 				24F1E90A24E27AA0000A4015 /* GridStackView.swift */,
 			);
-			path = Instagrid;
+			path = View;
+			sourceTree = "<group>";
+		};
+		24B3562324E2ED7400579D28 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2456368D24E1D439006338E5 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
