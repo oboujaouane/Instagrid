@@ -9,10 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var gridView: GridView?
+    
+    // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        gridView?.numberOfColumnsForFirstLine = 2 // TODO: add to action with switch case
+        gridView?.numberOfColumnsForSecondLine = 1 // TODO: add to action with switch case
     }
 
 
