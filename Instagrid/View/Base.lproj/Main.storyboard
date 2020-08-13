@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -21,57 +21,55 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbT-SY-Pak">
-                                <rect key="frame" x="20" y="20" width="280" height="39"/>
+                                <rect key="frame" x="20" y="64" width="374" height="39"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-jI-oSY" userLabel="Vertical Stack View">
-                                <rect key="frame" x="30" y="132.5" width="260" height="303"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-Au-oKc">
+                                <rect key="frame" x="202" y="208" width="10" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="Xnx-57-TdT"/>
+                                    <constraint firstAttribute="width" constant="10" id="uPC-e0-UMl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-MO-9Bc">
+                                <rect key="frame" x="30" y="232" width="354" height="29"/>
+                                <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-um-GBz" userLabel="GridContainerView">
+                                <rect key="frame" x="30" y="271" width="354" height="354"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-MO-9Bc">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="29"/>
-                                        <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-um-GBz" userLabel="GridContainerView">
-                                        <rect key="frame" x="0.0" y="43" width="260" height="260"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAp-Fr-8cN" customClass="GridView" customModule="Instagrid" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="15" width="230" height="230"/>
-                                                <color key="backgroundColor" red="0.062745098039215685" green="0.40000000000000002" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfColumnsForFirstLine">
-                                                        <integer key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfColumnsForSecondLine">
-                                                        <integer key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAp-Fr-8cN" customClass="GridView" customModule="Instagrid" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="15" width="324" height="324"/>
                                         <color key="backgroundColor" red="0.062745098039215685" green="0.40000000000000002" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="IAp-Fr-8cN" secondAttribute="bottom" constant="15" id="I9P-Fd-KL2"/>
-                                            <constraint firstAttribute="trailing" secondItem="IAp-Fr-8cN" secondAttribute="trailing" constant="15" id="LzY-1D-miW"/>
-                                            <constraint firstItem="IAp-Fr-8cN" firstAttribute="leading" secondItem="MsV-um-GBz" secondAttribute="leading" constant="15" id="ZRc-6T-aCP"/>
-                                            <constraint firstAttribute="width" secondItem="MsV-um-GBz" secondAttribute="height" id="aLe-0Q-1TF"/>
-                                            <constraint firstItem="IAp-Fr-8cN" firstAttribute="top" secondItem="MsV-um-GBz" secondAttribute="top" constant="15" id="qDl-Hm-sNx"/>
-                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfColumnsForFirstLine">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfColumnsForSecondLine">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.062745098039215685" green="0.40000000000000002" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="KsH-MO-9Bc" secondAttribute="trailing" id="Lnh-aq-d5e"/>
-                                    <constraint firstItem="KsH-MO-9Bc" firstAttribute="leading" secondItem="l3V-jI-oSY" secondAttribute="leading" id="pTd-0C-JQZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="IAp-Fr-8cN" secondAttribute="bottom" constant="15" id="I9P-Fd-KL2"/>
+                                    <constraint firstAttribute="trailing" secondItem="IAp-Fr-8cN" secondAttribute="trailing" constant="15" id="LzY-1D-miW"/>
+                                    <constraint firstItem="IAp-Fr-8cN" firstAttribute="leading" secondItem="MsV-um-GBz" secondAttribute="leading" constant="15" id="ZRc-6T-aCP"/>
+                                    <constraint firstAttribute="width" secondItem="MsV-um-GBz" secondAttribute="height" id="aLe-0Q-1TF"/>
+                                    <constraint firstItem="IAp-Fr-8cN" firstAttribute="top" secondItem="MsV-um-GBz" secondAttribute="top" constant="15" id="qDl-Hm-sNx"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6F2-0n-7gv" customClass="LayoutButtonsView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="30" y="478" width="260" height="80"/>
+                                <rect key="frame" x="30" y="772" width="354" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Ihe-cz-afq"/>
@@ -83,30 +81,37 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-Au-oKc">
-                                <rect key="frame" x="155" y="108.5" width="10" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="Xnx-57-TdT"/>
-                                    <constraint firstAttribute="width" constant="10" id="uPC-e0-UMl"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705882352942" green="0.84313725490196079" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6F2-0n-7gv" secondAttribute="bottom" constant="10" id="A0K-pZ-n0u"/>
+                            <constraint firstItem="MsV-um-GBz" firstAttribute="top" secondItem="KsH-MO-9Bc" secondAttribute="bottom" constant="10" id="B4r-JR-Hpd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KbT-SY-Pak" secondAttribute="trailing" constant="20" id="GdS-zm-KKa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l3V-jI-oSY" secondAttribute="trailing" constant="30" id="Vk9-2X-s4f"/>
+                            <constraint firstItem="6F2-0n-7gv" firstAttribute="leading" secondItem="MsV-um-GBz" secondAttribute="leading" id="Grj-0a-Hjv"/>
+                            <constraint firstItem="KsH-MO-9Bc" firstAttribute="leading" secondItem="MsV-um-GBz" secondAttribute="leading" id="LyT-uc-NUl"/>
+                            <constraint firstItem="KsH-MO-9Bc" firstAttribute="top" secondItem="u7l-Au-oKc" secondAttribute="bottom" constant="10" id="Zt3-PH-wA1"/>
+                            <constraint firstItem="KsH-MO-9Bc" firstAttribute="trailing" secondItem="MsV-um-GBz" secondAttribute="trailing" id="bKz-rN-4QL"/>
                             <constraint firstItem="KbT-SY-Pak" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bQd-2y-wn4"/>
-                            <constraint firstItem="l3V-jI-oSY" firstAttribute="top" secondItem="u7l-Au-oKc" secondAttribute="bottom" constant="10" id="c9F-cd-6pb"/>
+                            <constraint firstItem="MsV-um-GBz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="dXa-CZ-0OZ"/>
                             <constraint firstItem="KbT-SY-Pak" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="emu-m3-Qku"/>
-                            <constraint firstItem="l3V-jI-oSY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lAA-xe-Y9L"/>
-                            <constraint firstItem="l3V-jI-oSY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lyC-lP-eCX"/>
-                            <constraint firstItem="6F2-0n-7gv" firstAttribute="leading" secondItem="l3V-jI-oSY" secondAttribute="leading" id="r8t-x4-EsI"/>
-                            <constraint firstItem="l3V-jI-oSY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="tFM-Xn-rg8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MsV-um-GBz" secondAttribute="trailing" constant="30" id="g1M-VU-NMX"/>
+                            <constraint firstItem="6F2-0n-7gv" firstAttribute="trailing" secondItem="MsV-um-GBz" secondAttribute="trailing" id="hmV-rG-YT7"/>
+                            <constraint firstItem="MsV-um-GBz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wbS-Wy-fmT"/>
                             <constraint firstItem="u7l-Au-oKc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xav-XX-is4"/>
-                            <constraint firstItem="6F2-0n-7gv" firstAttribute="trailing" secondItem="l3V-jI-oSY" secondAttribute="trailing" id="zyG-6x-pdv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KsH-MO-9Bc"/>
+                                <exclude reference="MsV-um-GBz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="KsH-MO-9Bc"/>
+                                <include reference="MsV-um-GBz"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="gridView" destination="IAp-Fr-8cN" id="fyi-OJ-nBL"/>
