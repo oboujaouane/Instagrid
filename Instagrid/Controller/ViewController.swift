@@ -10,17 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: - Outlets
+    // MARK: - Internal Outlet
     
-    @IBOutlet private weak var gridView: GridView?
+    @IBOutlet weak var gridView: GridView?
+    
+    // MARK: - Private Outlet
+    
+    @IBOutlet private weak var layoutButtonsView: LayoutButtonsView?
     
     // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        gridView?.numberOfColumnsForFirstLine = 2 // TODO: add to action with switch case
-        gridView?.numberOfColumnsForSecondLine = 1 // TODO: add to action with switch case
+        
+    }
+    
+    // MARK: - Internal function
+    
+    func changeGridLayout(numberOfColumnsForFirstLine: Int, numberOfColumnsForSecondLine: Int) {
+        gridView?.numberOfColumnsForFirstLine = numberOfColumnsForFirstLine
+        gridView?.numberOfColumnsForSecondLine = numberOfColumnsForSecondLine
     }
 
 

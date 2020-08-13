@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class GridView: UIView {
         
-    // MARK: - Private properties
+    // MARK: - Private property
 
     private var spacingStackView: CGFloat = 15.0
     
@@ -57,10 +57,9 @@ class GridView: UIView {
         
         // Create stackViews columns
         for _ in 0 ..< numberOfColumns {
-            let imageView = UIImageView()
-            imageView.layer.cornerRadius = 2
-            imageView.backgroundColor = .white
-            horizontalStackView.addArrangedSubview(imageView)
+            let addImageView = AddImageView()
+            addImageView.xibSetup()
+            horizontalStackView.addArrangedSubview(addImageView)
         }
         
         stackView.addArrangedSubview(horizontalStackView)
