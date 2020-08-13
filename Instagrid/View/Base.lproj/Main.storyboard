@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -21,7 +21,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbT-SY-Pak">
@@ -30,8 +30,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-jI-oSY">
-                                <rect key="frame" x="30" y="88.5" width="260" height="303"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-jI-oSY" userLabel="Vertical Stack View">
+                                <rect key="frame" x="30" y="132.5" width="260" height="303"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-MO-9Bc">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="29"/>
@@ -71,7 +71,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6F2-0n-7gv" customClass="LayoutButtonsView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="30" y="390" width="260" height="80"/>
+                                <rect key="frame" x="30" y="478" width="260" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Ihe-cz-afq"/>
@@ -83,6 +83,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-Au-oKc">
+                                <rect key="frame" x="155" y="108.5" width="10" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="Xnx-57-TdT"/>
+                                    <constraint firstAttribute="width" constant="10" id="uPC-e0-UMl"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705882352942" green="0.84313725490196079" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -90,11 +97,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KbT-SY-Pak" secondAttribute="trailing" constant="20" id="GdS-zm-KKa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l3V-jI-oSY" secondAttribute="trailing" constant="30" id="Vk9-2X-s4f"/>
                             <constraint firstItem="KbT-SY-Pak" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bQd-2y-wn4"/>
+                            <constraint firstItem="l3V-jI-oSY" firstAttribute="top" secondItem="u7l-Au-oKc" secondAttribute="bottom" constant="10" id="c9F-cd-6pb"/>
                             <constraint firstItem="KbT-SY-Pak" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="emu-m3-Qku"/>
                             <constraint firstItem="l3V-jI-oSY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lAA-xe-Y9L"/>
                             <constraint firstItem="l3V-jI-oSY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lyC-lP-eCX"/>
                             <constraint firstItem="6F2-0n-7gv" firstAttribute="leading" secondItem="l3V-jI-oSY" secondAttribute="leading" id="r8t-x4-EsI"/>
                             <constraint firstItem="l3V-jI-oSY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="tFM-Xn-rg8"/>
+                            <constraint firstItem="u7l-Au-oKc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xav-XX-is4"/>
                             <constraint firstItem="6F2-0n-7gv" firstAttribute="trailing" secondItem="l3V-jI-oSY" secondAttribute="trailing" id="zyG-6x-pdv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -109,4 +118,7 @@
             <point key="canvasLocation" x="136.875" y="137.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Arrow Up" width="14" height="10"/>
+    </resources>
 </document>
