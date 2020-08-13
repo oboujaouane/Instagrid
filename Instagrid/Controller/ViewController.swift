@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet private var twoOneSelectionImage: UIImageView?
     @IBOutlet private var twoTwoSelectionImage: UIImageView?
     
-    
     // MARK: - Private property
     
     private var selectedButton = 0 {

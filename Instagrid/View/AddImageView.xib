@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddImageView" customModule="Instagrid" customModuleProvider="target">
             <connections>
+                <outlet property="addImageButton" destination="H8n-W3-4Nm" id="NHL-hy-5Fa"/>
                 <outlet property="imageView" destination="wib-nw-7K5" id="VeZ-1L-ouM"/>
             </connections>
         </placeholder>
