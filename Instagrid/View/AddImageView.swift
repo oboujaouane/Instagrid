@@ -52,7 +52,7 @@ extension AddImageView: UINavigationControllerDelegate, UIImagePickerControllerD
     
     // MARK: - Action
     
-    @IBAction func plusButtonTouched(_ sender: Any) {
+    @IBAction func selectImage(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
@@ -66,7 +66,6 @@ extension AddImageView: UINavigationControllerDelegate, UIImagePickerControllerD
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         addImageButton?.isHidden = true
-        // TODO: add selector to image which call plusButtonTouched
         imageView?.contentMode = .scaleAspectFill
         imageView?.image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
         imagePicker.dismiss(animated: true, completion: nil)

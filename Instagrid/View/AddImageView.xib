@@ -19,10 +19,14 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wib-nw-7K5">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wib-nw-7K5">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Fsw-ws-I8X" appends="YES" id="IA3-Zl-Sov"/>
+                    </connections>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8n-W3-4Nm">
                     <rect key="frame" x="70" y="70" width="60" height="60"/>
@@ -32,7 +36,7 @@
                     </constraints>
                     <state key="normal" backgroundImage="Plus"/>
                     <connections>
-                        <action selector="plusButtonTouched:" destination="-1" eventType="touchUpInside" id="w95-In-u2V"/>
+                        <action selector="selectImage:" destination="-1" eventType="touchUpInside" id="iJI-Wh-BBL"/>
                     </connections>
                 </button>
             </subviews>
@@ -51,6 +55,11 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="75" y="7"/>
         </view>
+        <tapGestureRecognizer id="Fsw-ws-I8X">
+            <connections>
+                <action selector="selectImage:" destination="-1" id="Cvv-ZK-7Ob"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="Plus" width="40" height="40"/>

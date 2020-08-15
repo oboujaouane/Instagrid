@@ -34,8 +34,15 @@ class ViewController: UIViewController {
         // TODO: complete if needed else remove
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        DispatchQueue.main.async {
+            self.showSelectionForButton(self.selectedButton)
+        }
+    }
+    
     // MARK: - Private functions
-
+    
     private func changeGridLayout(numberOfColumnsForFirstLine: Int, numberOfColumnsForSecondLine: Int) {
         gridView?.numberOfColumnsForFirstLine = numberOfColumnsForFirstLine
         gridView?.numberOfColumnsForSecondLine = numberOfColumnsForSecondLine
@@ -59,24 +66,24 @@ class ViewController: UIViewController {
             break
         }
     }
-
+    
     // MARK: - Action
     
     @IBAction private func buttonTouched(_ sender: UIButton) {
-            switch sender.tag {
-            case 0:
-                changeGridLayout(numberOfColumnsForFirstLine: 1, numberOfColumnsForSecondLine: 2)
-                selectedButton = sender.tag
-            case 1:
-                changeGridLayout(numberOfColumnsForFirstLine: 2, numberOfColumnsForSecondLine: 1)
-                selectedButton = sender.tag
-            case 2:
-                changeGridLayout(numberOfColumnsForFirstLine: 2, numberOfColumnsForSecondLine: 2)
-                selectedButton = sender.tag
-            default:
-                break
-            }
+        switch sender.tag {
+        case 0:
+            changeGridLayout(numberOfColumnsForFirstLine: 1, numberOfColumnsForSecondLine: 2)
+            selectedButton = sender.tag
+        case 1:
+            changeGridLayout(numberOfColumnsForFirstLine: 2, numberOfColumnsForSecondLine: 1)
+            selectedButton = sender.tag
+        case 2:
+            changeGridLayout(numberOfColumnsForFirstLine: 2, numberOfColumnsForSecondLine: 2)
+            selectedButton = sender.tag
+        default:
+            break
+        }
     }
-
+    
 }
 
