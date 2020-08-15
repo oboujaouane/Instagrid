@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     // MARK: - Internal Outlets
     
-    @IBOutlet weak var gridView: GridView?
+    @IBOutlet private weak var swipeLabel: UILabel?
+    @IBOutlet private weak var gridView: GridView?
     @IBOutlet private var oneTwoSelectionImage: UIImageView?
     @IBOutlet private var twoOneSelectionImage: UIImageView?
     @IBOutlet private var twoTwoSelectionImage: UIImageView?
@@ -25,7 +26,28 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setSwipeLabelText()
+    }
     // MARK: - Private functions
+    
+    private func setSwipeLabelText() {
+                if UIApplication.shared.statusBarOrientation.isPortrait {
+                    swipeLabel?.text = "Swipe up to share"
+        //            let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
+        //            swipeUp.direction = .up
+        //            self.view.addGestureRecognizer(swipeUp)
+                } else {
+                    swipeLabel?.text = "Swipe left to share"
+        //            let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
+        //            swipeLeft.direction = .left
+        //            self.view.addGestureRecognizer(swipeLeft)
+                }
+    }
 
     private func changeGridLayout(numberOfColumnsForFirstLine: Int, numberOfColumnsForSecondLine: Int) {
         gridView?.numberOfColumnsForFirstLine = numberOfColumnsForFirstLine

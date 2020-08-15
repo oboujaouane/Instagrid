@@ -192,6 +192,7 @@
                     <connections>
                         <outlet property="gridView" destination="IAp-Fr-8cN" id="fyi-OJ-nBL"/>
                         <outlet property="oneTwoSelectionImage" destination="8zH-89-IUn" id="nhs-vL-AST"/>
+                        <outlet property="swipeLabel" destination="KsH-MO-9Bc" id="zOy-3X-YAs"/>
                         <outlet property="twoOneSelectionImage" destination="olh-oh-eid" id="lpJ-Pf-mGD"/>
                         <outlet property="twoTwoSelectionImage" destination="pqu-UO-hfI" id="Hj0-b1-DAG"/>
                     </connections>
