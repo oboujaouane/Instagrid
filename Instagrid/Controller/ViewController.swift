@@ -31,23 +31,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setSwipeLabelText()
+        // TODO: complete if needed else remove
     }
-    // MARK: - Private functions
     
-    private func setSwipeLabelText() {
-                if UIApplication.shared.statusBarOrientation.isPortrait {
-                    swipeLabel?.text = "Swipe up to share"
-        //            let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
-        //            swipeUp.direction = .up
-        //            self.view.addGestureRecognizer(swipeUp)
-                } else {
-                    swipeLabel?.text = "Swipe left to share"
-        //            let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
-        //            swipeLeft.direction = .left
-        //            self.view.addGestureRecognizer(swipeLeft)
-                }
-    }
+    // MARK: - Private functions
 
     private func changeGridLayout(numberOfColumnsForFirstLine: Int, numberOfColumnsForSecondLine: Int) {
         gridView?.numberOfColumnsForFirstLine = numberOfColumnsForFirstLine
