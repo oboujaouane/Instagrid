@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -18,24 +18,24 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbT-SY-Pak">
-                                <rect key="frame" x="20" y="64" width="374" height="39"/>
+                                <rect key="frame" x="64" y="20" width="768" height="39"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-Au-oKc">
-                                <rect key="frame" x="202" y="208" width="10" height="14"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="u7l-Au-oKc">
+                                <rect key="frame" x="443" y="208" width="10" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Xnx-57-TdT"/>
                                     <constraint firstAttribute="width" constant="10" id="uPC-e0-UMl"/>
                                 </constraints>
-                                <variation key="heightClass=compact-widthClass=compact" image="Arrow Left"/>
+                                <variation key="heightClass=compact" image="Arrow Left"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-MO-9Bc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsH-MO-9Bc">
                                 <rect key="frame" x="30" y="232" width="354" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Swipe up to share">
@@ -84,8 +84,8 @@
                                     <constraint firstItem="IAp-Fr-8cN" firstAttribute="top" secondItem="MsV-um-GBz" secondAttribute="top" constant="15" id="qDl-Hm-sNx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooq-nc-6I6" userLabel="OneTwoView">
-                                <rect key="frame" x="30" y="772" width="80" height="80"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ooq-nc-6I6" userLabel="OneTwoView">
+                                <rect key="frame" x="30" y="303" width="80" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhL-ST-OAf" userLabel="OneTwoButton">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -113,7 +113,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAy-Vr-xPw" userLabel="TwoOneView">
-                                <rect key="frame" x="167" y="772" width="80" height="80"/>
+                                <rect key="frame" x="408" y="303" width="80" height="80"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngk-ia-Eex" userLabel="TwoOneButton">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -139,8 +139,8 @@
                                     <constraint firstItem="olh-oh-eid" firstAttribute="trailing" secondItem="Ngk-ia-Eex" secondAttribute="trailing" id="nDL-tQ-Hml"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av2-TW-4Ii" userLabel="TwoTwoView">
-                                <rect key="frame" x="304" y="772" width="80" height="80"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="av2-TW-4Ii" userLabel="TwoTwoView">
+                                <rect key="frame" x="304" y="303" width="80" height="80"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlF-e3-9OD" userLabel="TwoTwoButton">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
