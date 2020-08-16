@@ -13,8 +13,8 @@ class AddImageView: UIView {
     
     // MARK: - Private outlets
     
-    @IBOutlet private var imageView: UIImageView?
-    @IBOutlet private var addImageButton: UIButton?
+    @IBOutlet var imageView: UIImageView?
+    @IBOutlet var addImageButton: UIButton?
 
     // MARK: - Private properties
     
@@ -67,7 +67,17 @@ extension AddImageView: UINavigationControllerDelegate, UIImagePickerControllerD
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         addImageButton?.isHidden = true
         imageView?.contentMode = .scaleAspectFill
-        imageView?.image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
+        if let imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            if imageView?.image == nil {
+                ViewController.imagesDictionary.updateValue(imageTaken, forKey: imageTaken.description)
+                imageView?.image = imageTaken
+            } else {
+                if imageView?.image?.description != imageTaken.description {
+                    ViewController.imagesDictionary.updateValue(imageTaken, forKey: imageView?.image?.description ?? "")
+                    imageView?.image = imageTaken
+                }
+            }
+        }
         imagePicker.dismiss(animated: true, completion: nil)
     }
     

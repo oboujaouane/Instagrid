@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2407867624E303CF002A30F0 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2407867424E303CF002A30F0 /* Delm-Medium.otf */; };
 		2407867724E303CF002A30F0 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2407867524E303CF002A30F0 /* ThirstySoftRegular.otf */; };
+		241C4EB624E85F7500D498E9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C4EB524E85F7500D498E9 /* UIView+Extension.swift */; };
 		2456368A24E1D439006338E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2456368924E1D439006338E5 /* AppDelegate.swift */; };
 		2456368E24E1D439006338E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2456368D24E1D439006338E5 /* ViewController.swift */; };
 		2456369124E1D439006338E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2456368F24E1D439006338E5 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2407867424E303CF002A30F0 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		2407867524E303CF002A30F0 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		241C4EB524E85F7500D498E9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		2456368624E1D439006338E5 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2456368924E1D439006338E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2456368D24E1D439006338E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				2456368F24E1D439006338E5 /* Main.storyboard */,
+				24F1E90A24E27AA0000A4015 /* GridView.swift */,
 				24FD59C124E50C3B002DD869 /* AddImageView.xib */,
 				24FD59C324E50CFC002DD869 /* AddImageView.swift */,
-				24F1E90A24E27AA0000A4015 /* GridView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				24FD59BF24E5088D002DD869 /* UIApplication+Extension.swift */,
+				241C4EB524E85F7500D498E9 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241C4EB624E85F7500D498E9 /* UIView+Extension.swift in Sources */,
 				24FD59C424E50CFC002DD869 /* AddImageView.swift in Sources */,
 				2456368E24E1D439006338E5 /* ViewController.swift in Sources */,
 				24F1E90B24E27AA0000A4015 /* GridView.swift in Sources */,

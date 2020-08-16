@@ -26,6 +26,10 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - Internal static property
+    
+    static var imagesDictionary = [String:UIImage]()
+    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
