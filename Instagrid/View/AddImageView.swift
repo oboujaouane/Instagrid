@@ -73,8 +73,10 @@ extension AddImageView: UINavigationControllerDelegate, UIImagePickerControllerD
                 imageView?.image = imageTaken
             } else {
                 if imageView?.image?.description != imageTaken.description {
-                    ViewController.imagesDictionary.updateValue(imageTaken, forKey: imageView?.image?.description ?? "")
-                    imageView?.image = imageTaken
+                    if let strongImageView = imageView, let strongImage = strongImageView.image {
+                        ViewController.imagesDictionary.updateValue(imageTaken, forKey: strongImage.description)
+                        imageView?.image = imageTaken
+                    }
                 }
             }
         }
