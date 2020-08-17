@@ -79,6 +79,10 @@
                                         </variation>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="FPg-WL-Czm" appends="YES" id="N3F-FG-Vc9"/>
+                                </connections>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-um-GBz" userLabel="GridContainerView">
                                 <rect key="frame" x="30" y="110" width="260" height="260"/>
@@ -409,12 +413,18 @@
                     <connections>
                         <outlet property="gridView" destination="IAp-Fr-8cN" id="fyi-OJ-nBL"/>
                         <outlet property="oneTwoSelectionImage" destination="8zH-89-IUn" id="nhs-vL-AST"/>
+                        <outlet property="stackViewSwipe" destination="FPg-WL-Czm" id="B1O-Yc-oTs"/>
                         <outlet property="swipeLabel" destination="KsH-MO-9Bc" id="zOy-3X-YAs"/>
                         <outlet property="twoOneSelectionImage" destination="olh-oh-eid" id="lpJ-Pf-mGD"/>
                         <outlet property="twoTwoSelectionImage" destination="pqu-UO-hfI" id="Hj0-b1-DAG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="FPg-WL-Czm">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="56m-9x-jaw"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.875" y="137.5"/>
         </scene>

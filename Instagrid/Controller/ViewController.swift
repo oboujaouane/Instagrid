@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet private weak var swipeLabel: UILabel?
     @IBOutlet private weak var gridView: GridView?
+    @IBOutlet private weak var stackViewSwipe: UISwipeGestureRecognizer?
     @IBOutlet private var oneTwoSelectionImage: UIImageView?
     @IBOutlet private var twoOneSelectionImage: UIImageView?
     @IBOutlet private var twoTwoSelectionImage: UIImageView?
@@ -35,17 +36,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: complete if needed else remove
+        initSwipeDirection()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         DispatchQueue.main.async {
             self.showSelectionForButton(self.selectedButton)
+            self.initSwipeDirection()
         }
     }
     
     // MARK: - Private functions
+    
+    private func initSwipeDirection() {
+        if UIApplication.shared.statusBarOrientation.isPortrait {
+            stackViewSwipe?.direction = .up
+        } else {
+            stackViewSwipe?.direction = .left
+        }
+    }
     
     private func changeGridLayout(numberOfColumnsForFirstLine: Int, numberOfColumnsForSecondLine: Int) {
         gridView?.numberOfColumnsForFirstLine = numberOfColumnsForFirstLine
@@ -71,7 +81,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // MARK: - Action
+    // MARK: - Actions
     
     @IBAction private func buttonTouched(_ sender: UIButton) {
         switch sender.tag {
@@ -87,6 +97,10 @@ class ViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    @IBAction private func swipe(_ sender: UISwipeGestureRecognizer) {
+        print("Swipe")
     }
     
 }
