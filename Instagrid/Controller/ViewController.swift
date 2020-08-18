@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sajid. All rights reserved.
 //
 
+import Photos
 import UIKit
 
 class ViewController: UIViewController {
@@ -13,19 +14,22 @@ class ViewController: UIViewController {
     // MARK: - Internal Outlets
     
     @IBOutlet private weak var swipeLabel: UILabel?
+    @IBOutlet private weak var gridContainerView: UIView?
     @IBOutlet private weak var gridView: GridView?
+    @IBOutlet private weak var stackView: UIStackView?
     @IBOutlet private weak var stackViewSwipe: UISwipeGestureRecognizer?
     @IBOutlet private var oneTwoSelectionImage: UIImageView?
     @IBOutlet private var twoOneSelectionImage: UIImageView?
     @IBOutlet private var twoTwoSelectionImage: UIImageView?
     
-    // MARK: - Private property
+    // MARK: - Private properties
     
     private var selectedButton = 0 {
         didSet {
             showSelectionForButton(selectedButton)
         }
     }
+    private var translation = CGAffineTransform()
     
     // MARK: - Internal static property
     
@@ -81,6 +85,77 @@ class ViewController: UIViewController {
         }
     }
     
+    private func swipeGridContainerView() {
+        guard let strongGridContainerView = gridContainerView, let strongStackViewSwipe = stackViewSwipe else {
+            return
+        }
+        
+        if (strongStackViewSwipe.direction == .up) {
+            translation = CGAffineTransform(translationX: 0, y: -strongGridContainerView.frame.maxY)
+        }
+        else if (strongStackViewSwipe.direction == .left) {
+            translation = CGAffineTransform(translationX: -strongGridContainerView.frame.maxX, y: 0)
+        }
+        
+        checkIfPhotoLibraryAccessAuthorized()
+    }
+    
+    private func shareScreenshotOfGridContainer() -> UIActivityViewController {
+        let sharedImage = [gridContainerView?.screenshot]
+        let activityViewController = UIActivityViewController(activityItems: sharedImage as [Any], applicationActivities: nil)
+        activityViewController.completionWithItemsHandler = UIActivityViewController.CompletionWithItemsHandler? { [weak self] activityType, completed, returnedItems, activityError in
+                        
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [.curveEaseIn], animations: {
+                self?.gridContainerView?.transform = CGAffineTransform(translationX: 0, y: 0)
+            }, completion: nil)
+        }
+        return activityViewController
+    }
+    
+    private func checkIfPhotoLibraryAccessAuthorized() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized, .notDetermined, .restricted:
+            presentActivityController()
+        default:
+            createAlertToGrantAccessToPhotoLibrary()
+        }
+    }
+    
+    private func createAlertToGrantAccessToPhotoLibrary() {
+        let alert = UIAlertController(title: "Instagrid need access to your Photos",
+                                      message: "If you want save image to your photo library please allow access in Instagrid app settings.",
+                                      preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Don't Allow",
+                                      style: UIAlertAction.Style.cancel,
+                                      handler: { [weak self] alert -> Void in
+                                        self?.presentActivityController()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Go",
+                                      style: UIAlertAction.Style.default,
+                                      handler: { alert -> Void in
+                                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                  options: [:],
+                                                                  completionHandler: nil)
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func presentActivityController() {
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0, delay: 0, options: [.curveEaseIn], animations: {
+            guard let strongGridContainerView = self.gridContainerView else {
+                return
+            }
+            strongGridContainerView.transform = self.translation
+        }, completion: { _ in
+            let share = self.shareScreenshotOfGridContainer()
+            self.present(share, animated: true)
+        })
+    }
+    
     // MARK: - Actions
     
     @IBAction private func buttonTouched(_ sender: UIButton) {
@@ -99,9 +174,8 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction private func swipe(_ sender: UISwipeGestureRecognizer) {
-        print("Swipe")
+    @IBAction private func swipeStackView(_ sender: UISwipeGestureRecognizer) {
+        swipeGridContainerView()
     }
     
 }
-
