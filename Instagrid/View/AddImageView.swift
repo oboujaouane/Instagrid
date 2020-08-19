@@ -69,12 +69,12 @@ extension AddImageView: UINavigationControllerDelegate, UIImagePickerControllerD
         imageView?.contentMode = .scaleAspectFill
         if let imageTaken = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             if imageView?.image == nil {
-                ViewController.imagesDictionary.updateValue(imageTaken, forKey: imageTaken.description)
+                Images.dictionary.updateValue(imageTaken, forKey: imageTaken.description)
                 imageView?.image = imageTaken
             } else {
                 if imageView?.image?.description != imageTaken.description {
                     if let strongImageView = imageView, let strongImage = strongImageView.image {
-                        ViewController.imagesDictionary.updateValue(imageTaken, forKey: strongImage.description)
+                        Images.dictionary.updateValue(imageTaken, forKey: strongImage.description)
                         imageView?.image = imageTaken
                     }
                 }

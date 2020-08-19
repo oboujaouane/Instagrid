@@ -15,6 +15,7 @@
 		2456369124E1D439006338E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2456368F24E1D439006338E5 /* Main.storyboard */; };
 		2456369324E1D43C006338E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2456369224E1D43C006338E5 /* Assets.xcassets */; };
 		2456369624E1D43C006338E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2456369424E1D43C006338E5 /* LaunchScreen.storyboard */; };
+		24E4A8C124EDBCA0002025D4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E4A8C024EDBCA0002025D4 /* Images.swift */; };
 		24F1E90B24E27AA0000A4015 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F1E90A24E27AA0000A4015 /* GridView.swift */; };
 		24FD59C024E5088D002DD869 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FD59BF24E5088D002DD869 /* UIApplication+Extension.swift */; };
 		24FD59C224E50C3B002DD869 /* AddImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24FD59C124E50C3B002DD869 /* AddImageView.xib */; };
@@ -32,6 +33,7 @@
 		2456369224E1D43C006338E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2456369524E1D43C006338E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2456369724E1D43C006338E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24E4A8C024EDBCA0002025D4 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		24F1E90A24E27AA0000A4015 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		24FD59BF24E5088D002DD869 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		24FD59C124E50C3B002DD869 /* AddImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddImageView.xib; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				2415B4ED24E27015001F5EBD /* Supporting Files */,
 				24FD59BE24E50865002DD869 /* Extension */,
+				24E4A8BF24EDBC93002025D4 /* Model */,
 				24B3562224E2ED6B00579D28 /* View */,
 				24B3562324E2ED7400579D28 /* Controller */,
 			);
@@ -114,6 +117,14 @@
 				2456368D24E1D439006338E5 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		24E4A8BF24EDBC93002025D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				24E4A8C024EDBCA0002025D4 /* Images.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		24FD59BE24E50865002DD869 /* Extension */ = {
@@ -199,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E4A8C124EDBCA0002025D4 /* Images.swift in Sources */,
 				241C4EB624E85F7500D498E9 /* UIView+Extension.swift in Sources */,
 				24FD59C424E50CFC002DD869 /* AddImageView.swift in Sources */,
 				2456368E24E1D439006338E5 /* ViewController.swift in Sources */,

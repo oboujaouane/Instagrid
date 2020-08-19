@@ -93,7 +93,7 @@ class GridView: UIView {
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0.0).isActive = true
         
         // Set images if exists
-        for (index, element) in ViewController.imagesDictionary.enumerated() {
+        for (index, element) in Images.dictionary.enumerated() {
             if subviews[0].subviews[0].subviews.count == 1 && subviews[0].subviews[1].subviews.count == 2 {
                 switch index {
                 case 0:

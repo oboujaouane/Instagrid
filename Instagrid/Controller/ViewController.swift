@@ -31,15 +31,10 @@ class ViewController: UIViewController {
     }
     private var translation = CGAffineTransform()
     
-    // MARK: - Internal static property
-    
-    static var imagesDictionary = [String:UIImage]()
-    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initSwipeDirection()
     }
     
