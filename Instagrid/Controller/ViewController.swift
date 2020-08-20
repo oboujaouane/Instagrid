@@ -64,20 +64,20 @@ class ViewController: UIViewController {
     private func showSelectionForButton(_ index: Int) {
         switch index {
         case 0:
-            oneTwoSelectionImage?.isHidden = false
-            twoOneSelectionImage?.isHidden = true
-            twoTwoSelectionImage?.isHidden = true
+            hide(selectionImageOne: false, selectionImageTwo: true, selectionImageThree: true)
         case 1:
-            oneTwoSelectionImage?.isHidden = true
-            twoOneSelectionImage?.isHidden = false
-            twoTwoSelectionImage?.isHidden = true
+            hide(selectionImageOne: true, selectionImageTwo: false, selectionImageThree: true)
         case 2:
-            oneTwoSelectionImage?.isHidden = true
-            twoOneSelectionImage?.isHidden = true
-            twoTwoSelectionImage?.isHidden = false
+            hide(selectionImageOne: true, selectionImageTwo: true, selectionImageThree: false)
         default:
             break
         }
+    }
+    
+    private func hide(selectionImageOne: Bool, selectionImageTwo: Bool, selectionImageThree: Bool) {
+        oneTwoSelectionImage?.isHidden = selectionImageOne
+        twoOneSelectionImage?.isHidden = selectionImageTwo
+        twoTwoSelectionImage?.isHidden = selectionImageThree
     }
     
     private func swipeGridContainerView() {
@@ -85,14 +85,16 @@ class ViewController: UIViewController {
             return
         }
         
-        if (strongStackViewSwipe.direction == .up) {
-            translation = CGAffineTransform(translationX: 0, y: -strongGridContainerView.frame.maxY)
+        if Images.dictionary.count > 0 {
+            if (strongStackViewSwipe.direction == .up) {
+                translation = CGAffineTransform(translationX: 0, y: -strongGridContainerView.frame.maxY)
+            }
+            else if (strongStackViewSwipe.direction == .left) {
+                translation = CGAffineTransform(translationX: -strongGridContainerView.frame.maxX, y: 0)
+            }
+            
+            checkIfPhotoLibraryAccessAuthorized()
         }
-        else if (strongStackViewSwipe.direction == .left) {
-            translation = CGAffineTransform(translationX: -strongGridContainerView.frame.maxX, y: 0)
-        }
-        
-        checkIfPhotoLibraryAccessAuthorized()
     }
     
     private func shareScreenshotOfGridContainer() -> UIActivityViewController {

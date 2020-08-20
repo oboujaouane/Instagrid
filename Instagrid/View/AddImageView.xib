@@ -10,56 +10,35 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddImageView" customModule="Instagrid" customModuleProvider="target">
             <connections>
-                <outlet property="addImageButton" destination="H8n-W3-4Nm" id="NHL-hy-5Fa"/>
-                <outlet property="imageView" destination="wib-nw-7K5" id="VeZ-1L-ouM"/>
+                <outlet property="button" destination="2C8-V2-5bp" id="7Ly-zf-nzs"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="3Px-3G-4qy">
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wib-nw-7K5">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2C8-V2-5bp">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <gestureRecognizers/>
+                    <state key="normal" image="Plus"/>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="Fsw-ws-I8X" appends="YES" id="IA3-Zl-Sov"/>
-                    </connections>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8n-W3-4Nm">
-                    <rect key="frame" x="70" y="70" width="60" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="H8n-W3-4Nm" secondAttribute="height" id="6vf-We-wmi"/>
-                        <constraint firstAttribute="width" constant="60" id="zGn-sz-gQX"/>
-                    </constraints>
-                    <state key="normal" backgroundImage="Plus"/>
-                    <connections>
-                        <action selector="selectImage:" destination="-1" eventType="touchUpInside" id="iJI-Wh-BBL"/>
+                        <action selector="selectImage:" destination="-1" eventType="touchUpInside" id="SFZ-BU-H8K"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="H8n-W3-4Nm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3ue-en-IJ7"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wib-nw-7K5" secondAttribute="bottom" id="DSK-o3-Pq8"/>
-                <constraint firstItem="wib-nw-7K5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HNe-Ch-am4"/>
-                <constraint firstItem="H8n-W3-4Nm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S6V-3f-bZC"/>
-                <constraint firstItem="wib-nw-7K5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="egt-mf-Nu5"/>
-                <constraint firstItem="wib-nw-7K5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kEm-an-nX9"/>
+                <constraint firstItem="2C8-V2-5bp" firstAttribute="leading" secondItem="AsO-5E-Gn4" secondAttribute="leading" id="500-Y7-KZf"/>
+                <constraint firstItem="2C8-V2-5bp" firstAttribute="bottom" secondItem="AsO-5E-Gn4" secondAttribute="bottom" id="Cf6-oV-dUh"/>
+                <constraint firstItem="2C8-V2-5bp" firstAttribute="trailing" secondItem="AsO-5E-Gn4" secondAttribute="trailing" id="Sep-E4-5il"/>
+                <constraint firstItem="2C8-V2-5bp" firstAttribute="top" secondItem="3Px-3G-4qy" secondAttribute="top" id="iwr-4y-bc5"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="75" y="7"/>
+            <viewLayoutGuide key="safeArea" id="AsO-5E-Gn4"/>
+            <point key="canvasLocation" x="518.84057971014499" y="47.544642857142854"/>
         </view>
-        <tapGestureRecognizer id="Fsw-ws-I8X">
-            <connections>
-                <action selector="selectImage:" destination="-1" id="Cvv-ZK-7Ob"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="Plus" width="40" height="40"/>

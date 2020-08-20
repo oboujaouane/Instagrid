@@ -92,14 +92,19 @@ class GridView: UIView {
         stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0.0).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0.0).isActive = true
         
+        setImages()
+    }
+    
+    fileprivate func setImages() {
         // Set images if exists
         for (index, element) in Images.dictionary.enumerated() {
+            if index == 0 {
+                if let addImageView = subviews[0].subviews[0].subviews[0] as? AddImageView {
+                    updateImage(addImageView, element.value)
+                }
+            }
             if subviews[0].subviews[0].subviews.count == 1 && subviews[0].subviews[1].subviews.count == 2 {
                 switch index {
-                case 0:
-                    if let addImageView = subviews[0].subviews[0].subviews[0] as? AddImageView {
-                        updateImage(addImageView, element.value)
-                    }
                 case 1:
                     if let addImageView = subviews[0].subviews[1].subviews[0] as? AddImageView {
                         updateImage(addImageView, element.value)
@@ -113,10 +118,6 @@ class GridView: UIView {
                 }
             } else if subviews[0].subviews[0].subviews.count == 2 && subviews[0].subviews[1].subviews.count == 1 {
                 switch index {
-                case 0:
-                    if let addImageView = subviews[0].subviews[0].subviews[0] as? AddImageView {
-                        updateImage(addImageView, element.value)
-                    }
                 case 1:
                     if let addImageView = subviews[0].subviews[0].subviews[1] as? AddImageView {
                         updateImage(addImageView, element.value)
@@ -130,10 +131,6 @@ class GridView: UIView {
                 }
             } else if subviews[0].subviews[0].subviews.count == 2 && subviews[0].subviews[1].subviews.count == 2 {
                 switch index {
-                case 0:
-                    if let addImageView = subviews[0].subviews[0].subviews[0] as? AddImageView {
-                        updateImage(addImageView, element.value)
-                    }
                 case 1:
                     if let addImageView = subviews[0].subviews[0].subviews[1] as? AddImageView {
                         updateImage(addImageView, element.value)
@@ -155,9 +152,8 @@ class GridView: UIView {
     
     fileprivate func updateImage(_ addImageView: AddImageView, _ image: UIImage) {
         DispatchQueue.main.async {
-            addImageView.addImageButton?.isHidden = true
-            addImageView.imageView?.contentMode = .scaleAspectFill
-            addImageView.imageView?.image = image
+            addImageView.button?.setImage(nil, for: .normal)
+            addImageView.button?.setBackgroundImage(image, for: .normal)
         }
     }
     
